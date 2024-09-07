@@ -137,6 +137,18 @@
       "access": "<new_access_token>"
     }
     ```
+## Docker
+Для сборки и запуска проекта в Docker выполните следующую команду:
+
+```bash
+docker-compose up -d --build    
+```
+
+Для выполнения опциональных команд используйте следующую команду:
+
+```bash
+docker exec -it <container_name> <command>
+```
 
 ## Запуск тестов
 
