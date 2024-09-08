@@ -6,7 +6,7 @@ from referral_app.models import UserProfile
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ["phone_number", "invite_code", "invite_used"]
+        fields = ["id", "phone_number", "auth_code", "invite_code", "invite_used"]
 
     def validate_invite_used(self, value):
         """

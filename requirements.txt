@@ -7,4 +7,3 @@ djangorestframework-simplejwt==5.3.1
 django-cors-headers==4.4.0
 smsaero_api==3.0.0
 django-filter==24.3
-

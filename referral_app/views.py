@@ -1,5 +1,6 @@
+from django.urls import reverse
 from rest_framework.response import Response
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from referral_app.models import UserProfile
 from referral_app.utils import send_sms  # Импортируем функцию отправки SMS
@@ -7,8 +8,9 @@ from referral_app.serializers import UserProfileSerializer
 import random  # Для генерации случайного кода
 from rest_framework_simplejwt.views import TokenViewBase
 from referral_app.serializers import CustomTokenObtainPairSerializer
-from django.shortcuts import render
-from django.contrib import messages
+from django.shortcuts import render, redirect, get_object_or_404
+import requests
+from django.conf import settings
 
 
 def home(request):
