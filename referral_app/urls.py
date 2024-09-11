@@ -15,6 +15,10 @@ app_name = ReferralAppConfig.name
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("register_view/", views.register_view, name="register_view"),
+    path("login_by_phone/", views.login_by_phone, name="login_by_phone"),
+    path("<int:pk>/auth_code/", views.auth_code, name="auth_code"),
+    path("<int:pk>/retrieve_view/", views.retrieve_view, name="retrieve_view"),
     path("register/", UserProfileCreateAPIView.as_view(), name="register"),
     path(
         "<int:pk>/sign_up/",

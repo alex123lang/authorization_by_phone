@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication Code</title>
+</head>
+<body>
+    <h2>Enter Authentication Code</h2>
+    <form method="POST" action="{% url 'referral_app:auth_code' user.pk %}">
+        {% csrf_token %}
+        <label for="auth_code">Authentication Code:</label>
+        <input type="text" id="auth_code" name="auth_code" required><br><br>
+
+        <button type="submit">Submit Code</button>
+    </form>
+</body>
+</html>
